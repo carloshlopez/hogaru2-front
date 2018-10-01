@@ -5,13 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h2>Announcements!</h2>
+  <button ion-button color="secondary" [navPush]="createAnnouncementPage">Create Announcement</button>
+  <ion-list inset>
+    <ion-item *ngFor="let announcement of announcements">
+      <h2>{{announcement.text}}</h2>
+      <p>Made by: {{announcement.user_name}}</p>
+      <p>Expires on: {{announcement.exp_date}}</p>
+      <button ion-button style="float: right; margin-top: -30px;" (click) ="markSeen(announcement.id)">Mark as seen</button>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="secondary" [navPush]="createAnnouncementPage">Create Announcement</button>
 </ion-content>
+
+
