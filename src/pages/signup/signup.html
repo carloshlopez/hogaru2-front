@@ -14,29 +14,37 @@
 
 
 <ion-content padding>
+  
+  <ion-item>
+    <ion-label color="primary" stacked>First Name</ion-label>
+    <ion-input type="text" placeholder="name" [(ngModel)]="first_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Last Name</ion-label>
+    <ion-input type="text" placeholder="last name" [(ngModel)]="last_name"></ion-input>
+  </ion-item>
+  
   <ion-item>
     <ion-label color="primary" stacked>Email</ion-label>
-    <ion-input type="email" placeholder="email@domain.com"></ion-input>
+    <ion-input type="email" placeholder="email@domain.com" [(ngModel)]="email"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>Password</ion-label>
-    <ion-input type="password" placeholder="Password Input"></ion-input>
+    <ion-input type="password" placeholder="***" [(ngModel)]="password"></ion-input>
   </ion-item>
   
   <ion-item>
-    <ion-label color="primary" stacked>First Name</ion-label>
-    <ion-input type="text" placeholder="name"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" stacked>Last Name</ion-label>
-    <ion-input type="text" placeholder="last name"></ion-input>
+    <ion-label color="primary" stacked>Password Confirmation</ion-label>
+    <ion-input type="password" placeholder="***" [(ngModel)]="password_confirmation"></ion-input>
   </ion-item>
   
-  <button ion-button full>Sign Up</button>
+  
+  
+  <button ion-button full (click)="registerUser()" >Sign Up</button>
   <br/>
   Already have an account:
   <br/>
-  <button ion-button [navPush]="loginPage"  color="secondary">Login</button>
+  <button ion-button [navPush]="loginPage" color="secondary">Login</button>
   
 </ion-content>

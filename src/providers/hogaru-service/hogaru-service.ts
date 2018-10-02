@@ -78,6 +78,17 @@ export class HogaruServiceProvider {
     });
   }
   
+  registerUser(data_to_send){
+		console.log("User to register", data_to_send)
+    return new Promise(resolve => {
+      this.http.post(this.apiUrl+'users', data_to_send).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+  
   setCurrentUser(user_data){
     console.log("User data recieved", user_data);
     window.localStorage['user_id'] = user_data["id"];

@@ -1,11 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Profile
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <h2>{{user_name}}</h2>
+  <button ion-button full (click)="logout()" >Log out</button>
 </ion-content>

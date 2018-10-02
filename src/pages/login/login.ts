@@ -49,7 +49,7 @@ export class LoginPage {
 
   ionViewWillEnter(){
     console.log("In login is there user:", window.localStorage['user_id'])
-    if (window.localStorage['user_id'] != undefined){
+    if (window.localStorage['user_id'] != "-1"){
       this.navCtrl.setRoot(TabsPage)
     }
   }
